@@ -1,0 +1,27 @@
+{
+  "name": "algorithms",
+  "version": "1.0.0",
+  "description": "Practicing different algorithms",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bharat7gupta/algorithms.git"
+  },
+  "keywords": [
+    "algorithms",
+    "computer",
+    "programming",
+    "sorting",
+    "searching",
+    "traversing"
+  ],
+  "author": "Bharat",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bharat7gupta/algorithms/issues"
+  },
+  "homepage": "https://github.com/bharat7gupta/algorithms#readme"
+}
