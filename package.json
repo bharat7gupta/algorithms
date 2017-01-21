@@ -23,5 +23,8 @@
   "bugs": {
     "url": "https://github.com/bharat7gupta/algorithms/issues"
   },
-  "homepage": "https://github.com/bharat7gupta/algorithms#readme"
+  "homepage": "https://github.com/bharat7gupta/algorithms#readme",
+  "dependencies": {
+    "fs": "0.0.1-security"
+  }
 }
