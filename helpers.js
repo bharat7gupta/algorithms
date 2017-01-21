@@ -9,5 +9,21 @@ function readInput(){
 }
 
 function writeOutput(data){
-    fs.writeFile("./output.txt", JSON.stringify(data, null, 2));
+    if(data.isArray())
+        data = data.join(" ");
+    else
+        data = JSON.stringify(data, null, 2).replace(/\"/g, "");
+    fs.writeFile("./output.txt", data);
+}
+
+String.prototype.toNumArray = function() {
+    return this.split(" ").map(Number);
+}
+
+String.prototype.toArray = function() {
+    return this.split(" ");
+}
+
+Object.prototype.isArray = function() {
+    return Object.prototype.toString.call(this) === '[object Array]';
 }
