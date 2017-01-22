@@ -36,8 +36,8 @@ function maxHeapify(array, index) {
 }
 
 function minHeapify(array, index) {
-    var left = 2*index + 1;
-    var right = 2*index + 2;
+    var left = left(index);
+    var right = right(index);
     var smallest = index;
 
     if(left<array.heapSize && array[left] < array[index]) // if left child is smallest
@@ -55,4 +55,16 @@ function swap(array, index1, index2) {
     var temp = array[index1];
     array[index1] = array[index2];
     array[index2] = temp;
+}
+
+function left(index) {
+    return 2*index + 1;
+}
+
+function right(index) {
+    return 2*index + 2;
+}
+
+function parent(index) {
+    return Math.floor(index/2);
 }
