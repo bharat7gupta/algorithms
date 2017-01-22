@@ -22,12 +22,8 @@ function heapSort(array) {
     heap.buildMaxHeap(array);
 
     for(var i=array.length-1; i>=1; i--){
-        // we take out the first element and place it at the end of array, since it is the highest.
-        var temp = array[0];
-        array[0] = array[i];
-        array[i] = temp;
-
-        array.heapSize--;
+        array.swap(0, i); // we take out the first element and place it at the end of array, since it is the highest.
+        array.heapSize--; // the highest value is no longer considered to be a part of the heap
         heap.maxHeapify(array, 0);
     }
 }

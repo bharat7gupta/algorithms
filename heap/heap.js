@@ -1,8 +1,13 @@
+var helpers = require("../helpers.js");
+
 module.exports = {
     buildMaxHeap: buildMaxHeap,
     buildMinHeap: buildMinHeap,
     maxHeapify: maxHeapify,
-    minHeapify: minHeapify
+    minHeapify: minHeapify,
+    leftChildIndex: leftChildIndex,
+    rightChildIndex: rightChildIndex,
+    parentIndex: parentIndex
 }
 
 function buildMaxHeap(array) {
@@ -20,8 +25,8 @@ function buildMinHeap(array) {
 }
 
 function maxHeapify(array, index) {
-    var left = 2*index + 1;
-    var right = 2*index + 2;
+    var left = leftChildIndex(array, index);
+    var right = rightChildIndex(array, index);
     var largest = index;
 
     if(left<array.heapSize && array[left] > array[index]) // if left child is largest
@@ -30,14 +35,14 @@ function maxHeapify(array, index) {
         largest = right;
 
     if(largest !== index){ // "float-down" the parent if it is already not the largest
-        swap(array, index, largest);
+        array.swap(index, largest);
         maxHeapify(array, largest);
     }
 }
 
 function minHeapify(array, index) {
-    var left = left(index);
-    var right = right(index);
+    var left = leftChildIndex(array, index);
+    var right = rightChildIndex(array, index);
     var smallest = index;
 
     if(left<array.heapSize && array[left] < array[index]) // if left child is smallest
@@ -46,25 +51,19 @@ function minHeapify(array, index) {
         smallest = right;
 
     if(smallest !== index){ // "float-down" the parent if it is already not the smallest
-        swap(array, index, smallest);
+        array.swap(index, smallest);
         minHeapify(array, smallest);
     }
 }
 
-function swap(array, index1, index2) {
-    var temp = array[index1];
-    array[index1] = array[index2];
-    array[index2] = temp;
-}
-
-function left(index) {
+function leftChildIndex(array, index) {
     return 2*index + 1;
 }
 
-function right(index) {
+function rightChildIndex(array, index) {
     return 2*index + 2;
 }
 
-function parent(index) {
+function parentIndex(array, index) {
     return Math.floor(index/2);
 }

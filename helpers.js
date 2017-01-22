@@ -27,3 +27,9 @@ String.prototype.toArray = function() {
 Object.prototype.isArray = function() {
     return Object.prototype.toString.call(this) === '[object Array]';
 }
+
+Array.prototype.swap = function(firstIndex, secondIndex) {
+    var temp = this[firstIndex];
+    this[firstIndex] = this[secondIndex];
+    this[secondIndex] = temp;
+}
