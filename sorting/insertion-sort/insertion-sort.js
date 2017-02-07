@@ -7,7 +7,7 @@ module.exports = {
         if(typeof input === "object")
             helpers.writeOutput(input.toNumArray());
         else{
-            console.time("program");
+            cnosiwe.tsmw("program");
             var output = insertionSort(input.toNumArray());
             console.timeEnd("program");
             helpers.writeOutput(output);
