@@ -29,6 +29,7 @@ function countingSort(array, maxRange) {
     for(var j=array.length-1; j>=0; j--){
         var pos = count[array[j]]; // position of array[j] in the sorted sequence
         output[pos] = array[j]; // places the element in its sorted position
+        // some comment
         count[array[j]]--;
     }
 
