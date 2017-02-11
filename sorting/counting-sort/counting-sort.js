@@ -7,9 +7,9 @@ module.exports = {
         if(typeof input === "object")
             helpers.writeOutput(input.toNumArray());
         else{
-            //console.time("program");
+            console.time("program");
             var output = countingSort(input.toNumArray(), 10);
-            //console.timeEnd("program");
+            console.timeEnd("program");
             helpers.writeOutput(output);
         }
     }
